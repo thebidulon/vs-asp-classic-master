@@ -1,0 +1,55 @@
+{
+    "name": "vs-asp-classic-updated",
+    "displayName": "ASP Classic, Updated",
+    "description": "ASP Classic support with Snippets",
+    "icon": "images/classic_asp.png",
+    "version": "0.1.1",
+    "publisher": "TheBidulon",
+    "repository": {
+	"type": "git",
+	"url": "git@github.com/thebidulon/vs-asp-classic-updated.git"
+    },
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+				"id": "asp",
+            "aliases": ["ASP Classic", "asp"],
+            "extensions": [".asp", ".inc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [
+            {
+                "language": "asp",
+                "scopeName": "source.vbs",
+                "path": "./syntaxes/vbscript.tmLanguage.json"
+            },
+            {
+                "language": "asp",
+                "scopeName": "text.html.asp",
+                "path": "./syntaxes/html.asp.tmLanguage.json",
+                "embeddedLanguages": {
+                    "text.html.asp": "asp",
+					"source.vbs": "vbscript",
+					"text.html": "html",
+					"source.sql": "sql",
+					"text.xml": "xml",
+					"source.js": "javascript",
+					"source.json": "json",
+					"source.css": "css"
+            }
+        }],
+        "snippets": [
+            {
+                "language": "asp",
+                "scopeName": "text.html.asp",
+                "path": "./snippets/asp.json"
+            }
+        ]
+    }
+}
